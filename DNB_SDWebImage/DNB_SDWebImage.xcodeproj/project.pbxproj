@@ -13,6 +13,7 @@
 		0722DBA51DBDB61000B29104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0722DBA31DBDB61000B29104 /* Main.storyboard */; };
 		0722DBA71DBDB61000B29104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0722DBA61DBDB61000B29104 /* Assets.xcassets */; };
 		0722DBAA1DBDB61000B29104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0722DBA81DBDB61000B29104 /* LaunchScreen.storyboard */; };
+		0722DBB41DBDB75600B29104 /* DownloaderOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722DBB31DBDB75600B29104 /* DownloaderOperation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		0722DBA61DBDB61000B29104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0722DBA91DBDB61000B29104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0722DBAB1DBDB61000B29104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0722DBB21DBDB75600B29104 /* DownloaderOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloaderOperation.h; sourceTree = "<group>"; };
+		0722DBB31DBDB75600B29104 /* DownloaderOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderOperation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +61,7 @@
 		0722DB991DBDB60F00B29104 /* DNB_SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				0722DBB11DBDB71F00B29104 /* SZDNBSDWebImage */,
 				0722DB9D1DBDB60F00B29104 /* AppDelegate.h */,
 				0722DB9E1DBDB60F00B29104 /* AppDelegate.m */,
 				0722DBA01DBDB60F00B29104 /* ViewController.h */,
@@ -77,6 +81,15 @@
 				0722DB9B1DBDB60F00B29104 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0722DBB11DBDB71F00B29104 /* SZDNBSDWebImage */ = {
+			isa = PBXGroup;
+			children = (
+				0722DBB21DBDB75600B29104 /* DownloaderOperation.h */,
+				0722DBB31DBDB75600B29104 /* DownloaderOperation.m */,
+			);
+			path = SZDNBSDWebImage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0722DBB41DBDB75600B29104 /* DownloaderOperation.m in Sources */,
 				0722DBA21DBDB61000B29104 /* ViewController.m in Sources */,
 				0722DB9F1DBDB60F00B29104 /* AppDelegate.m in Sources */,
 				0722DB9C1DBDB60F00B29104 /* main.m in Sources */,
@@ -300,6 +314,7 @@
 				0722DBB01DBDB61000B29104 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
