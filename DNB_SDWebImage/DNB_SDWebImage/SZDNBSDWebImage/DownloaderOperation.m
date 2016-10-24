@@ -49,6 +49,13 @@
     NSData *data = [NSData dataWithContentsOfURL:URLStr];
     UIImage *image = [UIImage imageWithData:data];
     
+    //实现沙盒缓存
+    if (image != nil) {
+        
+        [data writeToFile:[self.URLStr appendCaches] atomically:YES];
+    }
+    
+    
     //判断当前的操作是否已经被取消,如果取消就直接return,不在往下执行
     //注意:这个方法可以在多个地方判断,但是必须能够拦截回调,并且至少在延迟操作的后面有一个判断
     if (self.isCancelled == YES) {

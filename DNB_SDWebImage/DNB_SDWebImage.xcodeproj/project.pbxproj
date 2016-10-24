@@ -24,6 +24,7 @@
 		0722DBD01DBDE3CF00B29104 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722DBC71DBDE3CF00B29104 /* YYClassInfo.m */; };
 		0722DBD31DBDE3DE00B29104 /* APPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722DBD21DBDE3DE00B29104 /* APPModel.m */; };
 		0722DBD61DBDF22A00B29104 /* DownloaderOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722DBD51DBDF22A00B29104 /* DownloaderOperationManager.m */; };
+		0722DBD91DBE029000B29104 /* NSString+path.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722DBD81DBE029000B29104 /* NSString+path.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,8 @@
 		0722DBD21DBDE3DE00B29104 /* APPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPModel.m; sourceTree = "<group>"; };
 		0722DBD41DBDF22A00B29104 /* DownloaderOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloaderOperationManager.h; sourceTree = "<group>"; };
 		0722DBD51DBDF22A00B29104 /* DownloaderOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderOperationManager.m; sourceTree = "<group>"; };
+		0722DBD71DBE029000B29104 /* NSString+path.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+path.h"; sourceTree = "<group>"; };
+		0722DBD81DBE029000B29104 /* NSString+path.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+path.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 		0722DBB11DBDB71F00B29104 /* SZDNBSDWebImage */ = {
 			isa = PBXGroup;
 			children = (
+				0722DBD71DBE029000B29104 /* NSString+path.h */,
+				0722DBD81DBE029000B29104 /* NSString+path.m */,
 				0722DBB21DBDB75600B29104 /* DownloaderOperation.h */,
 				0722DBB31DBDB75600B29104 /* DownloaderOperation.m */,
 				0722DBD41DBDF22A00B29104 /* DownloaderOperationManager.h */,
@@ -242,6 +247,7 @@
 				0722DBCE1DBDE3CF00B29104 /* AFURLSessionManager.m in Sources */,
 				0722DB9F1DBDB60F00B29104 /* AppDelegate.m in Sources */,
 				0722DBCA1DBDE3CF00B29104 /* AFNetworkReachabilityManager.m in Sources */,
+				0722DBD91DBE029000B29104 /* NSString+path.m in Sources */,
 				0722DBD61DBDF22A00B29104 /* DownloaderOperationManager.m in Sources */,
 				0722DBCF1DBDE3CF00B29104 /* NSObject+YYModel.m in Sources */,
 				0722DB9C1DBDB60F00B29104 /* main.m in Sources */,
