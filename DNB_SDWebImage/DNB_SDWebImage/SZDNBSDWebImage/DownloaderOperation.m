@@ -39,11 +39,22 @@
     一旦队列调度了操作执行,那么操作就会自动的执行main方法
  */
 - (void)main{
+    NSLog(@"传入..%@",self.URLStr);
+    
+    //模拟网络延迟
+    [NSThread sleepForTimeInterval:1.0];
     
     //下载图片
     NSURL *URLStr = [NSURL URLWithString:self.URLStr];
     NSData *data = [NSData dataWithContentsOfURL:URLStr];
     UIImage *image = [UIImage imageWithData:data];
+    
+    //判断当前的操作是否已经被取消,如果取消就直接return,不在往下执行
+    //注意:这个方法可以在多个地方判断,但是必须能够拦截回调,并且至少在延迟操作的后面有一个判断
+    if (self.isCancelled == YES) {
+        NSLog(@"取消..%@",self.URLStr);
+        return;
+    }
     
     //断言
     NSAssert(self.successBlock != nil, @"回到的block不能为空");
@@ -52,6 +63,7 @@
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         //执行完这行代码,VC里面的successBlock就会执行,并拿到image
         //注意:在哪个线程回调代码块,那么代码块就在哪个线程执行,代理通知也是这样的
+        NSLog(@"完成..%@",self.URLStr);
         self.successBlock(image);
     }];
     
