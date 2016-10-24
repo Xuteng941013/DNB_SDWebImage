@@ -16,17 +16,11 @@
 
 @interface ViewController ()
 
-/** 全局队列 */
-@property (strong,nonatomic) NSOperationQueue *queue;
-
 /** 数据源数组 */
 @property (nonatomic,strong) NSArray *appList;
 
 /** 展示图片 */
 @property (weak, nonatomic) IBOutlet UIImageView *iconImageView;
-
-/** 操作缓存池 */
-@property (nonatomic,strong) NSMutableDictionary *OPCache;
 
 /** 记录上一次图片的地址 */
 @property (nonatomic,copy) NSString *lastURLStr;
@@ -41,12 +35,6 @@
     //加载数据
     [self loadJSONData];
     
-    //初始化全局队列
-    self.queue = [[NSOperationQueue alloc] init];
-    
-    //初始化操作缓存池
-    self.OPCache = [NSMutableDictionary dictionary];
-    
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
@@ -59,12 +47,8 @@
     //2.判断当前图片的地址和上一次图片的地址是否一样,如果不一样就取消上一次正在执行的下载操作
     //cancel : 仅仅是改变了操作的状态而已,并没有真正的取消这个操作
     if (![app.icon isEqualToString:self.lastURLStr] && self.lastURLStr != nil) {
-        
-        //取消上一次正在进行的操作
-        [[self.OPCache objectForKey:self.lastURLStr] cancel];
-        
-        //把取消的操作从操作缓存池中移除
-        [self.OPCache removeObjectForKey:self.lastURLStr];
+        //单例接管取消操作
+        [[DownloaderOperationManager sharedManager] cancelDownloadOperationWithLastURLStr:self.lastURLStr];
     }
     
     //记录本次的图片的地址,当再次点击的时候,它自然而然就是上次的地址了
