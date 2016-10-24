@@ -20,16 +20,24 @@
 
 @implementation DownloaderOperation
 
+//1.自定义操作实例化的方法
+//2.此方法先于mian方法执行
 + (instancetype)downloadWithURLStr:(NSString *)URLStr successBlock:(void (^)(UIImage *))successBlock{
+    //1.实例化自定义操作
     DownloaderOperation *op = [[DownloaderOperation alloc] init];
     
+    //2.保存图片地址和下载完成回调,就可以在当前类全局使用,把外界传入的数据变成自己的
     op.URLStr = URLStr;
     op.successBlock = successBlock;
     
+    //3.返回自定义操作
     return op;
 }
 
-
+/**
+ *  重写操作执行的入口方法 : 做你想做的事情,默认就在子线程异步执行的
+    一旦队列调度了操作执行,那么操作就会自动的执行main方法
+ */
 - (void)main{
     
     //下载图片
@@ -42,7 +50,8 @@
     
     //图片下载完成后,通知主线程刷新UI
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        
+        //执行完这行代码,VC里面的successBlock就会执行,并拿到image
+        //注意:在哪个线程回调代码块,那么代码块就在哪个线程执行,代理通知也是这样的
         self.successBlock(image);
     }];
     
