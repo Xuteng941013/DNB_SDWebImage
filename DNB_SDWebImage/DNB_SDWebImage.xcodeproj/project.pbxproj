@@ -23,6 +23,7 @@
 		0722DBCF1DBDE3CF00B29104 /* NSObject+YYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722DBC51DBDE3CF00B29104 /* NSObject+YYModel.m */; };
 		0722DBD01DBDE3CF00B29104 /* YYClassInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722DBC71DBDE3CF00B29104 /* YYClassInfo.m */; };
 		0722DBD31DBDE3DE00B29104 /* APPModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722DBD21DBDE3DE00B29104 /* APPModel.m */; };
+		0722DBD61DBDF22A00B29104 /* DownloaderOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 0722DBD51DBDF22A00B29104 /* DownloaderOperationManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		0722DBC81DBDE3CF00B29104 /* YYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYModel.h; sourceTree = "<group>"; };
 		0722DBD11DBDE3DE00B29104 /* APPModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPModel.h; sourceTree = "<group>"; };
 		0722DBD21DBDE3DE00B29104 /* APPModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPModel.m; sourceTree = "<group>"; };
+		0722DBD41DBDF22A00B29104 /* DownloaderOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloaderOperationManager.h; sourceTree = "<group>"; };
+		0722DBD51DBDF22A00B29104 /* DownloaderOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloaderOperationManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 			children = (
 				0722DBB21DBDB75600B29104 /* DownloaderOperation.h */,
 				0722DBB31DBDB75600B29104 /* DownloaderOperation.m */,
+				0722DBD41DBDF22A00B29104 /* DownloaderOperationManager.h */,
+				0722DBD51DBDF22A00B29104 /* DownloaderOperationManager.m */,
 			);
 			path = SZDNBSDWebImage;
 			sourceTree = "<group>";
@@ -237,6 +242,7 @@
 				0722DBCE1DBDE3CF00B29104 /* AFURLSessionManager.m in Sources */,
 				0722DB9F1DBDB60F00B29104 /* AppDelegate.m in Sources */,
 				0722DBCA1DBDE3CF00B29104 /* AFNetworkReachabilityManager.m in Sources */,
+				0722DBD61DBDF22A00B29104 /* DownloaderOperationManager.m in Sources */,
 				0722DBCF1DBDE3CF00B29104 /* NSObject+YYModel.m in Sources */,
 				0722DB9C1DBDB60F00B29104 /* main.m in Sources */,
 				0722DBCC1DBDE3CF00B29104 /* AFURLRequestSerialization.m in Sources */,

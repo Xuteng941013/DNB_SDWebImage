@@ -11,7 +11,7 @@
 #import "AFNetworking.h"
 #import "YYModel.h"
 #import "APPModel.h"
-
+#import "DownloaderOperationManager.h"
 
 
 @interface ViewController ()
@@ -70,20 +70,13 @@
     //记录本次的图片的地址,当再次点击的时候,它自然而然就是上次的地址了
     self.lastURLStr = app.icon;
     
-    //3.创建自定义操作
-    DownloaderOperation *op = [DownloaderOperation downloadWithURLStr:app.icon successBlock:^(UIImage *image) {
-        //刷新界面
-        self.iconImageView.image = image;
+    
+    //单例接管下载 : 取消操作暂时失效
+    [[DownloaderOperationManager sharedManager] downloadWithURLStr:app.icon successBlock:^(UIImage *image) {
         
-        //图片添加完后,移除操作
-        [self.OPCache removeObjectForKey:app.icon];
+        self.iconImageView.image = image;
     }];
     
-    //4.将操作添加到操作缓存池中
-    [self.OPCache setObject:op forKey:app.icon];
-    
-    //5.将自定义操作添加到队列中
-    [self.queue addOperation:op];
 }
 
 
